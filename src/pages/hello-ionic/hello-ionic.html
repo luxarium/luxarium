@@ -3,23 +3,123 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hello Ionic</ion-title>
+    <ion-title>Luxarium</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="card-background-page">
+  <ion-card>
+    <img src="assets/img/card-saopaolo.png"/>
+    <div class="card-title">São Paulo</div>
+    <div class="card-subtitle">41 Listings</div>
+    <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 Comments</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        11h ago
+      </ion-note>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-fab left top>
+    <button ion-fab mini color="warning"><ion-icon name="md-share"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+    <ion-col>
+      
+    </ion-col>
+  </ion-row> 
+  </ion-card>
 
-  <h3>Welcome to your first Ionic app!</h3>
+  <ion-card>
+    <ion-fab left top>
+    <button style="opacity: 0.7" ion-fab mini color="warning"><ion-icon name="md-share"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button ion-fab><ion-icon name="logo-facebook" (click) = "setPerson()"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+    <img src="assets/img/card-amsterdam.png"/>
+    <div class="card-title">Amsterdam</div>
+    <div class="card-subtitle">64 Listings</div>
+    <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 Comments</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        11h ago
+      </ion-note>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col center text-center>
+      <ion-icon name="text"></ion-icon>
+      </ion-col>
+       
+      <ion-col>
+      
+    </ion-col>
+  </ion-row>
+  </ion-card>
 
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
-  </p>
-  <p>
-    Follow along on the tutorial section of the Ionic docs!
-  </p>
-  <p>
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
-  </p>
+  <ion-card>
+    <img src="assets/img/card-saopaolo.png"/>
+    <div class="card-title">San Francisco</div>
+    <div class="card-subtitle">72 Listings</div>
+    <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 Comments</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        11h ago
+      </ion-note>
+    </ion-col>
+  </ion-row>
+  </ion-card>
+
+  <ion-card>
+    <img src="assets/img/card-amsterdam.png"/>
+    <div class="card-title">Madison</div>
+    <div class="card-subtitle">28 Listings</div>
+  </ion-card>
 
 </ion-content>
