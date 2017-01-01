@@ -5,7 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-item-details',
-  templateUrl: 'item-details.html'
+  templateUrl: 'modal.html'
 })
 export class ItemDetailsPage {
   selectedItem: any;
@@ -14,6 +14,5 @@ export class ItemDetailsPage {
     // If we navigated to this page, we will have an item available as a nav param
     console.log("salam")
     this.selectedItem = navParams.get('item');
-    console.log("sel : ",this.selectedItem)
   }
 }

@@ -7,6 +7,7 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
 var Posts = [];
 var path = require('path');
+
 app.use(express.static(path.join(__dirname, 'template')));
 app.post('/login',function (req,res) {
     var request = req.body
@@ -20,11 +21,12 @@ app.post('/login',function (req,res) {
     }
 })
 app.get('/',function(req,res){
-    res.send(base64_encode('files/img/card-saopaolo.png'));
+    res.send(base64_encode('server/files/img/card-saopaolo.png'));
 })
 app.post('/addpost',function(req,res){
     var rndID = randomId();
-   var newPost = {'postId': rndID ,'title' : req.body.title ,'img':base64_encode('files/img/card-saopaolo.png'), 'content' : req.body.content, 'like': JSON.parse(req.body.like) , 'dislike': JSON.parse(req.body.dislike) , 'comments': []};
+    console.log(req.body);
+   var newPost = {'postId': rndID ,'title' : req.body.title ,'img':base64_encode('server/files/img/card-saopaolo.png'), 'content' : req.body.content, 'like': 0 , 'dislike': 0 , 'comments': []};
 
    Posts.push(newPost);
     res.send("OK")
@@ -37,8 +39,14 @@ function randomId()
 
 app.post('/showAllPost' , function(req,res)
 {
-    // res.send(Posts,base64_encode('/files/img/card-saopaolo.png'));
-    res.send("Ok");
+      res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,contenttype'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+
+
+    res.send(Posts);
+    // res.send("Ok");
     
 })
 app.post('/like' , function(req,res){
@@ -68,4 +76,5 @@ function base64_encode(file) {
     // convert binary data to base64 encoded string
     return new Buffer(bitmap).toString('base64');
 }
+// server.listen('8070','192.168.10.87');
 server.listen('8070');

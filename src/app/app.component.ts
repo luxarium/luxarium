@@ -7,6 +7,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
 
+import {AddPostPage} from '../pages/add-post/add-post'
 
 @Component({
   templateUrl: 'app.html'
@@ -27,7 +28,8 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'My First List', component: ListPage },
+      { title: 'Add Post', component: AddPostPage }
     ];
   }
 
@@ -44,6 +46,6 @@ export class MyApp {
     // close the menu when clicking a link from the menu
     this.menu.close();
     // navigate to the new page if it is not the current page
-    this.nav.setRoot(page.component);
+    this.nav.push(page.component);
   }
 }
