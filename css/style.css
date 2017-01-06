@@ -1,6 +1,7 @@
 /*------ template stylization ------*/
 body {
 	background: #2f3133 url(../img/patternbg.jpg) 0 0 repeat;
+    direction: rtl;
 }
 /*----------- Back to top --------------*/
 #toTop {
@@ -923,6 +924,7 @@ hr.line2 {
 	display: block;
 	margin: 0 0 18px;
 	padding: 0;
+    box-shadow: -2px 6px 22px 2px black;
 }
 .element > a figure img {
 	width: 100%;
@@ -965,8 +967,8 @@ hr.line2 {
 	background: none;
 	border: none;
 	text-transform: uppercase;
-	font-family: 'Georgia', serif;
-	font-size: 12px;
+	font-family: "A EntezareZohoor 1 **";
+	font-size: 18px;
 	line-height: 20px;
 	color: #797979;
 	margin: 0;
@@ -1366,7 +1368,7 @@ address .info p:first-child {
 /*--------- footer --------- */
 footer {
 	padding: 64px 0;
-	background: url("../img/linefooter.jpg") top center repeat-x;
+	/*background: url("../img/linefooter.jpg") top center repeat-x;*/
 }
 /*--------------social----------------*/
 .social_icons {
@@ -1760,4 +1762,13 @@ img {
     color: white;
     font-size: xx-large;
     direction: rtl;
+}
+
+.Per-Div span{
+    font-family: "A EntezareZohoor B4";
+    font-size: 14px;
+}
+
+.shadow {
+    box-shadow: 0px 1px 18px 2px black;
 }

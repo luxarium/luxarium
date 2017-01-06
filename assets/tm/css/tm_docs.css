@@ -461,6 +461,7 @@ max-width: 100%;
   position: relative;
   color: #222;
 }
+
  #filters.pagination li a.selected{
     background: #DDDDDD;
     color: #555;

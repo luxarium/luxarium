@@ -6,7 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript">
 //<![CDATA[
-try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"a282a97bb51b9daaa489d9c016445601",petok:"68e2e3e2646331a685848dc3321e3bba6c29cc4d-1482866919-86400",zone:"template-help.com",rocket:"0",apps:{"abetterbrowser":{"ie":"7"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=f2befc48d1/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+try {
+    if (!window.CloudFlare) {
+        var CloudFlare = [{
+            verbose: 0,
+            p: 0,
+            byc: 0,
+            owlid: "cf",
+            bag2: 1,
+            mirage2: 0,
+            oracle: 0,
+            paths: {cloudflare: "/cdn-cgi/nexp/dok3v=1613a3a185/"},
+            atok: "a282a97bb51b9daaa489d9c016445601",
+            petok: "68e2e3e2646331a685848dc3321e3bba6c29cc4d-1482866919-86400",
+            zone: "template-help.com",
+            rocket: "0",
+            apps: {"abetterbrowser": {"ie": "7"}}
+        }];
+        !function (a, b) {
+            a = document.createElement("script"), b = document.getElementsByTagName("script")[0], a.async = !0, a.src = "//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=f2befc48d1/cloudflare.min.js", b.parentNode.insertBefore(a, b)
+        }()
+    }
+} catch (e) {
+}
 //]]>
 </script>
 <link rel="icon" href="img/favicon.ico" type="image/x-icon">
@@ -27,8 +49,7 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag
     <script src="js/jquery.ui.totop.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
     <script src="js/jquery.equalheights.js"></script>
-    <script src="js/forms.js"></script>
-
+    <script src="js/forms.js"></script>>
 
     <script src='js/camera.js'></script>
     <!--[if (gt IE 9)|!(IE)]><!-->
@@ -46,11 +67,29 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag
 </head>
 
 <body>
+        <?php
+        //mysqli_connect('localhost', 'root', '');
+$link = mysql_connect('localhost', 'root', '');
+if (!$link) {
+    die('Could not connect: ' . mysql_error());
+    $output = "<script> console.log('test')</script>";
+
+}
+        $output = "<script>console.log('Connected successfully')</script>";
+
+        echo $output;
+mysql_close($link);
+?>
+    
 <!--==============================header=================================-->
 <header id="header">
       <div class="container">
         <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img alt="Grill point" src="img/logo.png"></a></h1>
       </div>
+    
+
+    
+    
       <div class="menuheader">
           <div class="container">
             <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
@@ -83,7 +122,7 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 col-md-7 col-sm-7 reserve_table">
-                    <h2>My Short Bio</h2>
+                    <h2><?php echo "test"?></h2>
                     <figure><img src="img/page2_img1.jpg" alt=""></figure>
                     <h3>omnis iste natus error sit voluptatem accusantium doloremquel</h3>
                     <p class="m_bot2">Proin dictum elementum velit. Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum nisl. Mauris accumsan nulla vel diam. </p>
