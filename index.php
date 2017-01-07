@@ -46,9 +46,10 @@ try {
     <link rel="stylesheet" href="css/touchTouch.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style_signup.css">
 
 
-	<script src="js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/jquery-migrate-1.2.1.js"></script>
     <script src="js/superfish.js"></script>
     <script src="js/jquery.mobilemenu.js"></script>
@@ -93,7 +94,7 @@ try {
     })
 </script>
 
-    <script>
+    <script type="text/javascript">
         $(window).load( function(){
 
         	   jQuery('.camera_wrap').camera();
@@ -102,8 +103,7 @@ try {
     </script>
 
 
-
-    <script>
+    <script type="text/javascript">
 /*var p = $( "scroller:first" );*/
 var p = document.getElementById("#test");
 var position = p.position();
@@ -115,6 +115,56 @@ var position = p.position();
             }
 </script>
 
+    <script type="text/javascript">
+        /* window.onload() = function () {
+         document.getElementById("log").onclick =
+         function () {
+         show_log();
+         }
+         }*/
+
+        function show_log() {
+            setTimeout(function () {
+
+                if ($(login).hasClass('hide')) {
+                    /*if (!($(login).hasClass(fadeInLeft))){
+                     $(login).addClass(fadeInLeft);
+                     }*/
+                    $(login).removeClass("hide");
+                    $(login).addClass("animated");
+                }
+
+                if ($(login).hasClass('animated')) {
+                    if ($(login).hasClass('fadeOutLeft')) {
+                        $(login).removeClass('fadeOutLeft');
+                        $(login).addClass('fadeInLeft');
+                    }
+                    $(login).removeClass("animated");
+                    $(login).addClass("animated");
+                }
+            }, 1);
+        }
+
+
+        $('html').click(function () {
+            $(login).click(function (event) {
+                event.stopPropagation();
+            });
+
+            if ($(login).hasClass('animated')) {
+                console.log('test');
+                $(login).removeClass("animated");
+                if ($(login).hasClass('fadeInLeft')) {
+                    $(login).removeClass('fadeInLeft');
+                    $(login).addClass('fadeOutLeft');
+                }
+                $(login).addClass("animated");
+            }
+        })
+
+
+    </script>
+
 
     <!--[if lt IE 9]>
     <div style='text-align:center'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div>
@@ -125,14 +175,51 @@ var position = p.position();
 </head>
 
 <body>
+
+<div id="login" class="pro-info fadeInLeft hide" style="z-index: 1005; position: fixed; width: 24%">
+    <div class="login" style="margin: 10% 9px auto 9px;  width: auto;">
+        <form action="About_2.php" method="get">
+            <ul>
+                <li>
+                    <a href="#" class=" icon user"></a><input name="username" type="text" class="text"
+                                                              placeholder="نام کاربری" onfocus="this.placeholder = '';"
+                                                              onblur="if (this.placeholder == '') {this.placeholder = 'نام کاربری';}">
+                </li>
+
+                <li>
+                    <a href="#" class=" icon key"></a><input name="password" type="password" placeholder="رمز عبور"
+                                                             onfocus="this.placeholder = '';"
+                                                             onblur="if (this.placeholder == '') {this.placeholder = 'تکرار رمز';}">
+                </li>
+                <div class="clear"></div>
+
+                <div class="submit">
+                    <input type="submit" value="ورود">
+                    <!--                                    <div class="strip">Or</div>-->
+                </div>
+                <!---->
+                <!--                                <div class="dropbox"> <a class="drop" href="#">SIGN WITH DROPBOX</a></div>-->
+            </ul>
+        </form>
+
+    </div>
+</div>
 <!--==============================header=================================-->
 <header id="header">
       <div class="container">
-        <h1 class="navbar-brand navbar-brand_ fadeIn animated" ><a href="index.html"><img alt="Grill point" src="img/Logo_Header.png"></a></h1>
+          <h1 class="navbar-brand navbar-brand_ fadeIn animated"><a href="index.php"><img alt="Grill point"
+                                                                                          src="img/Logo_Header.png"></a>
+          </h1>
       </div>
       <div class="menuheader">
           <div class="container">
             <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
+                <ul class="nav sf-menu" style="right: 0px; position: absolute">
+                    <li><a href="About.php" class="Per-Font">ثبت نام</a></li>
+                </ul>
+                <ul class="nav sf-menu" style="left: 0px; position: absolute">
+                    <li><a id="log" href="javascript:void(0);" onclick="show_log();" class="Per-Font">ورود</a></li>
+                </ul>
                 <ul class="nav sf-menu">
                   <!--<li><a href="index.html" class="Per-Font">تماس با ما</a></li>
                   <li><a href="index-1.html" class="Per-Font">درباره ما</a></li>-->
@@ -149,7 +236,7 @@ var position = p.position();
                       </li>
                     </ul>
                     </li>
-                  <li class="active"><a href="index.html" class="Per-Font">خانه</a></li>
+                    <li class="active"><a href="index.php" class="Per-Font">خانه</a></li>
                 </ul>
             </nav>
           </div>
@@ -157,6 +244,7 @@ var position = p.position();
 </header>
 <!--==============================content=================================-->
 <div id="content">
+
 
     <!--==============================slider=================================-->
     <div class="slider " style="position : relative; direction : ltr">
@@ -327,7 +415,7 @@ var position = p.position();
                 </ul>-->
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-                <a class="smalllogo2 logo" href="index.html"><img src="img/Logo_Footer_Full.png" alt=""></a>
+                <a class="smalllogo2 logo" href="index.php"><img src="img/Logo_Footer_Full.png" alt=""></a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footercol">
                 <p class="footerpriv">&copy; 2016 Omid Yazdizadeh &bull; <a class="privacylink" href="index-5.html">Privacy policy</a><!-- {%FOOTER_LINK} --></p>
