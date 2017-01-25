@@ -10,7 +10,7 @@
 
 <ion-content padding class="card-background-page">
   <ion-fab right bottom>
-    <button ion-fab color="danger" (click) = "ShowAll()"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab color="danger" (click) = "addPost()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
   <ion-card *ngFor="let post of posts">
     <img src="assets/img/card-saopaolo.png"/>
@@ -39,7 +39,7 @@
     <ion-fab left top>
     <button ion-fab mini color="warning"><ion-icon name="md-share"></ion-icon></button>
     <ion-fab-list side="right">
-      <button ion-fab><ion-icon name="logo-facebook" (click) = "ShowAll()"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-facebook" (click) = "addPost()"></ion-icon></button>
       <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
       <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
       <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>

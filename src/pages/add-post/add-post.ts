@@ -8,17 +8,17 @@ import {Http,URLSearchParams} from '@angular/http'
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-add-post',
   templateUrl: 'add-post.html'
 })
 export class AddPostPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams , private http : Http) {
-    console.log("AddPost");
+data;
+  constructor(public nav: NavController, public navParams: NavParams , private http : Http) {
+    this.nav = nav;
     
   }
 
   ionViewDidLoad() {
+        this.data = this.navParams.data;
     console.log('ionViewDidLoad AddPostPage');
   }
   addPost(title,content){
